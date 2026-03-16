@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Волжские просторы - Главная</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="media/img/favicon.ico">
+</head>
+<body class="light-theme">
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Логотип -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="media/img/logo.jpg" alt="Волжские просторы" width="200" height="60">
+                    </a>
+                </div>
+
+                <!-- Навигация -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="registration.html" class="nav-link">Регистрация</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#auth-section" class="nav-link">Авторизация</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="account.html" class="nav-link">Личный кабинет</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about-section" class="nav-link">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tours-section" class="nav-link">Экскурсии</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#search-section" class="nav-link">Поиск</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#footer" class="nav-link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Переключатель темы -->
+                <div class="theme-switcher">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+
+                <!-- Мобильное меню -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                    <span class="menu-icon"></span>
+                    <span class="menu-icon"></span>
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Слайдер популярных экскурсий -->
+        <section class="slider-section">
+            <div class="container">
+                <h2 class="section-title">Популярные экскурсии</h2>
+                <div class="slider">
+                    <div class="slider-track">
+                        <!-- Слайд 1 -->
+                        <div class="slide active">
+                            <img src="media/img/image.jpeg" alt="Кремль и набережная" class="slide-image">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Кремль и набережная</h3>
+                                <p class="slide-description">Экскурсия по историческому центру Нижнего Новгорода с посещением древнего Кремля и живописной набережной Волги.</p>
+                                <div class="slide-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-value">4.9/5</span>
+                                </div>
+                                <a href="tour.html?id=1" class="btn btn-primary">Подробнее</a>
+                            </div>
+                        </div>
+                        <!-- Слайд 2 -->
+                        <div class="slide">
+                            <img src="media/img/image-2.jpeg" alt="Чкаловская лестница" class="slide-image">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Чкаловская лестница</h3>
+                                <p class="slide-description">Прогулка по самой длинной лестнице в России с захватывающими видами на слияние Оки и Волги.</p>
+                                <div class="slide-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-value">4.7/5</span>
+                                </div>
+                                <a href="tour.html?id=2" class="btn btn-primary">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Элементы управления слайдером -->
+                    <button class="slider-prev" aria-label="Предыдущий слайд">‹</button>
+                    <button class="slider-next" aria-label="Следующий слайд">›</button>
+                    <!-- Индикаторы -->
+                    <div class="slider-indicators">
+                        <button class="indicator active" aria-label="Слайд 1"></button>
+                        <button class="indicator" aria-label="Слайд 2"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция авторизации -->
+        <section class="auth-section" id="auth-section">
+            <div class="container">
+                <h2 class="section-title">Вход в личный кабинет</h2>
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required 
+                               placeholder="ваш@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Пароль</label>
+                        <input type="password" id="password" name="password" class="form-input" required
+                               placeholder="Введите пароль">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                    <div class="auth-links">
+                        <a href="#" class="link">Забыли пароль?</a>
+                        <a href="registration.html" class="link">Зарегистрироваться</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Секция "О нас" -->
+        <section class="about-section" id="about-section">
+            <div class="container">
+                <h2 class="section-title">О компании</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Турагентство «Волжские просторы» — ваш надежный гид по Нижнему Новгороду и всему Поволжью. Мы работаем с 2010 года и за это время помогли тысячам туристов открыть для себя красоту и богатство нашего региона.</p>
+                        <p>Наша команда состоит из профессиональных гидов, историков и краеведов, которые с любовью рассказывают о каждом уголке Нижнего Новгорода. Мы предлагаем как классические экскурсии, так и уникальные авторские маршруты.</p>
+                        <p>Наша миссия — сделать ваш отдых комфортным, интересным и запоминающимся. Мы тщательно продумываем каждую деталь маршрута, чтобы вы смогли полностью погрузиться в атмосферу старинного города.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="media/img/about.jpg" alt="Наша команда" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Приветствие -->
+        <section class="greeting-section">
+            <div class="container">
+                <h2 class="section-title">Добро пожаловать!</h2>
+                <div class="greeting-content">
+                    <p class="greeting-text">Дорогие друзья! Мы рады приветствовать вас в нашем турагентстве. Нижний Новгород — город с богатой историей, уникальной архитектурой и неповторимой атмосферой. Наши экскурсии помогут вам не просто увидеть достопримечательности, а почувствовать душу города, узнать его тайны и полюбить всем сердцем.</p>
+                    <p class="greeting-text">Каждая экскурсия — это настоящее путешествие во времени, где прошлое встречается с настоящим. Мы подготовили для вас разнообразные маршруты: от исторических прогулок по старинным улочкам до современных гастрономических туров.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция экскурсий -->
+        <section class="tours-section" id="tours-section">
+            <div class="container">
+                <h2 class="section-title">Наши экскурсии</h2>
+                <div class="tours-grid">
+                    <!-- Карточка 1 -->
+                    <div class="tour-card">
+                        <img src="media/img/image.jpeg" alt="Нижегородский Кремль" class="tour-image">
+                        <div class="tour-content">
+                            <h3 class="tour-title">Нижегородский Кремль</h3>
+                            <p class="tour-description">Знакомство с историческим центром города, посещение древних башен и стен кремля.</p>
+                            <div class="tour-meta">
+                                <span class="tour-bookings">Записано: 24 чел.</span>
+                                <span class="tour-rating">★★★★☆ 4.8</span>
+                            </div>
+                            <a href="registration.html" class="btn btn-secondary">Записаться</a>
+                        </div>
+                    </div>
+                    <!-- Карточка 2 -->
+                    <div class="tour-card">
+                        <img src="media/img/image-2.jpeg" alt="Чкаловская лестница" class="tour-image">
+                        <div class="tour-content">
+                            <h3 class="tour-title">Чкаловская лестница</h3>
+                            <p class="tour-description">Прогулка по знаменитой лестнице с панорамными видами на Волгу и Оку.</p>
+                            <div class="tour-meta">
+                                <span class="tour-bookings">Записано: 18 чел.</span>
+                                <span class="tour-rating">★★★★★ 4.9</span>
+                            </div>
+                            <a href="registration.html" class="btn btn-secondary">Записаться</a>
+                        </div>
+                    </div>
+                    <!-- Карточка 3 -->
+                    <div class="tour-card">
+                        <img src="media/img/image-3.jpeg" alt="Печерский монастырь" class="tour-image">
+                        <div class="tour-content">
+                            <h3 class="tour-title">Печерский монастырь</h3>
+                            <p class="tour-description">Посещение одного из древнейших монастырей Поволжья с уникальной архитектурой.</p>
+                            <div class="tour-meta">
+                                <span class="tour-bookings">Записано: 12 чел.</span>
+                                <span class="tour-rating">★★★★☆ 4.7</span>
+                            </div>
+                            <a href="registration.html" class="btn btn-secondary">Записаться</a>
+                        </div>
+                    </div>
+                    <!-- Карточка 4 -->
+                    <div class="tour-card">
+                        <img src="media/img/image-4.jpeg" alt="Улица Рождественская" class="tour-image">
+                        <div class="tour-content">
+                            <h3 class="tour-title">Улица Рождественская</h3>
+                            <p class="tour-description">Экскурсия по купеческой улице с сохранившимися историческими зданиями.</p>
+                            <div class="tour-meta">
+                                <span class="tour-bookings">Записано: 20 чел.</span>
+                                <span class="tour-rating">★★★★☆ 4.6</span>
+                            </div>
+                            <a href="registration.html" class="btn btn-secondary">Записаться</a>
+                        </div>
+                    </div>
+                    <!-- Карточка 5 -->
+                    <div class="tour-card">
+                        <img src="media/img/image-5.jpeg" alt="Волжские просторы" class="tour-image">
+                        <div class="tour-content">
+                            <h3 class="tour-title">Волжские просторы</h3>
+                            <p class="tour-description">Речная прогулка по Волге с рассказом о истории и природе великой реки.</p>
+                            <div class="tour-meta">
+                                <span class="tour-bookings">Записано: 15 чел.</span>
+                                <span class="tour-rating">★★★★★ 4.9</span>
+                            </div>
+                            <a href="registration.html" class="btn btn-secondary">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Поиск -->
+        <section class="search-section" id="search-section">
+            <div class="container">
+                <h2 class="section-title">Поиск экскурсий</h2>
+                <form class="search-form">
+                    <div class="search-group">
+                        <input type="text" 
+                               class="search-input" 
+                               placeholder="Введите название экскурсии или ключевые слова..."
+                               list="search-suggestions">
+                        <datalist id="search-suggestions">
+                            <option value="Кремль">
+                            <option value="Чкаловская лестница">
+                            <option value="Печерский монастырь">
+                            <option value="Рождественская улица">
+                            <option value="Волга">
+                            <option value="Исторический центр">
+                            <option value="Архитектура">
+                            <option value="Купеческие дома">
+                        </datalist>
+                        <button type="submit" class="btn btn-primary search-btn">Найти</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Отзывы -->
+        <section class="reviews-section">
+            <div class="container">
+                <h2 class="section-title">Отзывы наших клиентов</h2>
+                <div class="reviews-slider">
+                    <div class="reviews-track">
+                        <!-- Отзыв 1 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="media/img/user1.jpg" alt="Мария" class="review-avatar">
+                                <div class="review-author">
+                                    <h3 class="review-name">Мария Иванова</h3>
+                                    <span class="review-date">15.03.2024</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Отличная экскурсия по Кремлю! Гид был очень внимательным и знающим. Узнали много интересных фактов об истории города. Обязательно вернемся для других экскурсий!</p>
+                            <a href="tour.html?id=1" class="review-link">Посмотреть экскурсию →</a>
+                        </div>
+                        <!-- Отзыв 2 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="media/img/user2.jpg" alt="Алексей" class="review-avatar">
+                                <div class="review-author">
+                                    <h3 class="review-name">Алексей Петров</h3>
+                                    <span class="review-date">10.03.2024</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Прогулка по Чкаловской лестнице превзошла все ожидания! Виды просто захватывающие дух. Рекомендую всем, кто впервые в Нижнем Новгороде.</p>
+                            <a href="tour.html?id=2" class="review-link">Посмотреть экскурсию →</a>
+                        </div>
+                        <!-- Отзыв 3 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="media/img/user3.jpg" alt="Елена" class="review-avatar">
+                                <div class="review-author">
+                                    <h3 class="review-name">Елена Смирнова</h3>
+                                    <span class="review-date">05.03.2024</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Очень понравилась экскурсия по Рождественской улице. Узнали много интересного о купеческом прошлом города. Организация на высшем уровне!</p>
+                            <a href="tour.html?id=4" class="review-link">Посмотреть экскурсию →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Подписка на новости -->
+        <section class="newsletter-section">
+            <div class="container">
+                <h2 class="section-title">Подпишитесь на новости</h2>
+                <p class="section-subtitle">Узнавайте первыми о новых экскурсиях и специальных предложениях</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" 
+                               class="form-input" 
+                               placeholder="Ваш email" 
+                               required
+                               name="newsletter-email">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" 
+                               id="newsletter-consent" 
+                               name="consent" 
+                               required
+                               class="checkbox-input">
+                        <label for="newsletter-consent" class="checkbox-label">
+                            Соглашаюсь на обработку персональных данных
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Подписаться</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contacts">
+                    <h3 class="footer-title">Контакты</h3>
+                    <a href="tel:+78007894567" class="footer-link">8 (800) 789-45-67</a>
+                    <a href="mailto:volzhskie-prostory@mail.ru" class="footer-link">volzhskie-prostory@mail.ru</a>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html" class="footer-link">Главная</a></li>
+                        <li><a href="index-dark.html" class="footer-link">Главная (темная)</a></li>
+                        <li><a href="registration.html" class="footer-link">Регистрация</a></li>
+                        <li><a href="tour.html" class="footer-link">Экскурсия</a></li>
+                        <li><a href="account.html" class="footer-link">Личный кабинет</a></li>
+                        <li><a href="404.html" class="footer-link">Страница не найдена</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-info">
+                    <div class="logo">
+                        <img src="media/img/logo.svg" alt="Волжские просторы" width="150" height="45">
+                    </div>
+                    <p class="footer-copyright">© 2024 Турагентство «Волжские просторы»</p>
+                </div>
+                 <div class="footer-info">
+                    <div class="logo">
+                        <img src="media/img/logo.svg" alt="Волжские просторы" width="150" height="45">
+                    </div>
+                    <p class="footer-copyright">© 2024 Турагентство «Волжские просторы»</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

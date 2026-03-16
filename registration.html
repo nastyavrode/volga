@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | Волжские просторы</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="icon" type="image/x-icon" href="media/img/favicon.ico">
+</head>
+<body class="light-theme">
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Логотип -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="media/img/logo.jpg" alt="Волжские просторы - Турагентство" width="200" height="60">
+                    </a>
+                </div>
+
+                <!-- Навигация -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about-section" class="nav-link">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tours-section" class="nav-link">Экскурсии</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="account.html" class="nav-link">Личный кабинет</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#footer" class="nav-link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Переключатель темы -->
+                <div class="theme-switcher">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+
+                <!-- Мобильное меню -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                    <span class="menu-icon"></span>
+                    <span class="menu-icon"></span>
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <div class="container">
+                <ul class="breadcrumbs-list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><span>Регистрация</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Секция регистрации -->
+        <section class="registration-section">
+            <div class="container">
+                <h1 class="page-title">Регистрация на сайте</h1>
+                <p class="page-subtitle">Создайте аккаунт, чтобы бронировать экскурсии и получать персональные предложения</p>
+
+                <!-- Прогресс регистрации -->
+                <div class="registration-progress">
+                    <div class="progress-steps">
+                        <div class="step active">
+                            <span class="step-number">1</span>
+                            <span class="step-title">Основные данные</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <span class="step-title">Дополнительные участники</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <span class="step-title">Подтверждение</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Форма регистрации -->
+                <form class="registration-form" id="registrationForm" novalidate>
+                    <!-- Основные поля -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">Личные данные</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label required-field">Электронная почта</label>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       class="form-input" 
+                                       placeholder="example@mail.ru"
+                                       required
+                                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                <span class="input-hint">Будет использоваться для входа</span>
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstname" class="form-label required-field">Имя</label>
+                                <input type="text" 
+                                       id="firstname" 
+                                       name="firstname" 
+                                       class="form-input" 
+                                       placeholder="Иван"
+                                       required
+                                       minlength="2">
+                                <div class="error-message" id="firstnameError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastname" class="form-label required-field">Фамилия</label>
+                                <input type="text" 
+                                       id="lastname" 
+                                       name="lastname" 
+                                       class="form-input" 
+                                       placeholder="Иванов"
+                                       required
+                                       minlength="2">
+                                <div class="error-message" id="lastnameError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="age" class="form-label required-field">Возраст</label>
+                                <div class="age-input-group">
+                                    <input type="number" 
+                                           id="age" 
+                                           name="age" 
+                                           class="form-input age-number" 
+                                           placeholder="25"
+                                           required
+                                           min="18"
+                                           max="120">
+                                </div>
+                                <div class="error-message" id="ageError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label required-field">Пол</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="male" required>
+                                        <span class="radio-custom"></span>
+                                        Мужской
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="female" required>
+                                        <span class="radio-custom"></span>
+                                        Женский
+                                    </label>
+                                </div>
+                                <div class="error-message" id="genderError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password" class="form-label required-field">Пароль</label>
+                                <input type="password" 
+                                       id="password" 
+                                       name="password" 
+                                       class="form-input" 
+                                       placeholder="Минимум 6 символов"
+                                       required
+                                       minlength="6">
+                                <span class="input-hint">Не менее 6 символов</span>
+                                <div class="password-strength" id="passwordStrength">
+                                    <div class="strength-bar"></div>
+                                </div>
+                                <div class="error-message" id="passwordError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="passwordConfirm" class="form-label required-field">Подтверждение пароля</label>
+                                <input type="password" 
+                                       id="passwordConfirm" 
+                                       name="passwordConfirm" 
+                                       class="form-input" 
+                                       placeholder="Повторите пароль"
+                                       required>
+                                <div class="error-message" id="passwordConfirmError"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Загрузка фото -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">Фотография профиля</h2>
+                        <div class="photo-upload" id="photoUpload">
+                            <div class="photo-preview" id="photoPreview">
+                                <img src="media/img/male.png" alt="Фото профиля" id="previewImage">
+                                <div class="photo-overlay">
+                                    <span>Загрузить фото</span>
+                                </div>
+                            </div>
+                            <input type="file" 
+                                   id="photo" 
+                                   name="photo" 
+                                   accept="image/jpeg,image/png,image/jpg"
+                                   class="photo-input">
+                            <p class="photo-hint">
+                                Форматы: JPG, PNG. Максимальный размер: 5 МБ
+                            </p>
+                            <div class="error-message" id="photoError"></div>
+                        </div>
+                    </div>
+
+                    <!-- Блок дополнительных участников -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <h2 class="form-section-title">Дополнительные участники</h2>
+                            <button type="button" class="btn btn-outline" id="addParticipantBtn">
+                                <span class="plus-icon">+</span> Добавить участника
+                            </button>
+                        </div>
+                        <p class="section-description">Вы можете добавить до 3 дополнительных участников для совместного бронирования</p>
+
+                        <!-- Контейнер для дополнительных участников -->
+                        <div class="participants-container" id="participantsContainer">
+                            <!-- Шаблон будет клонироваться -->
+                        </div>
+
+                        <!-- Макет дополнительного участника (скрыт) -->
+                        <template id="participantTemplate">
+                            <div class="participant-card">
+                                <div class="participant-header">
+                                    <h3 class="participant-title">Участник <span class="participant-number"></span></h3>
+                                    <button type="button" class="remove-participant" title="Удалить">
+                                        <span class="remove-icon">×</span>
+                                    </button>
+                                </div>
+                                <div class="participant-fields">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label required-field">Фамилия</label>
+                                            <input type="text" 
+                                                   name="participant_lastname[]" 
+                                                   class="form-input participant-lastname"
+                                                   required
+                                                   minlength="2">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label required-field">Имя</label>
+                                            <input type="text" 
+                                                   name="participant_firstname[]" 
+                                                   class="form-input participant-firstname"
+                                                   required
+                                                   minlength="2">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label required-field">Возраст</label>
+                                            <input type="number" 
+                                                   name="participant_age[]" 
+                                                   class="form-input participant-age"
+                                                   required
+                                                   min="1"
+                                                   max="120">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label required-field">Пол</label>
+                                            <select name="participant_gender[]" class="form-select participant-gender" required>
+                                                <option value="">Выберите пол</option>
+                                                <option value="male">Мужской</option>
+                                                <option value="female">Женский</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Согласие на обработку данных -->
+                    <div class="form-section">
+                        <div class="consent-block">
+                            <label class="checkbox-label">
+                                <input type="checkbox" 
+                                       id="consent" 
+                                       name="consent" 
+                                       required>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">
+                                    Я даю согласие на обработку персональных данных в соответствии с 
+                                    <a href="#" class="link">Политикой конфиденциальности</a>
+                                </span>
+                            </label>
+                            <div class="error-message" id="consentError"></div>
+                        </div>
+                    </div>
+
+                    <!-- Кнопки формы -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                            Зарегистрироваться
+                        </button>
+                        <p class="auth-redirect">
+                            Уже есть аккаунт? <a href="index.html#auth-section" class="link">Войдите</a>
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Модальное окно успеха -->
+                <div class="modal" id="successModal">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title">Регистрация успешна!</h2>
+                            <button class="modal-close" id="closeModal">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="success-animation">
+                                <svg class="success-icon" viewBox="0 0 52 52">
+                                    <circle class="success-circle" cx="26" cy="26" r="25" fill="none"/>
+                                    <path class="success-check" fill="none" d="M14 27l8 8 16-16"/>
+                                </svg>
+                            </div>
+                            <p class="modal-text">
+                                Спасибо за регистрацию! На указанный email отправлено письмо с подтверждением.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="account.html" class="btn btn-primary">Перейти в личный кабинет</a>
+                            <a href="index.html" class="btn btn-outline">На главную</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contacts">
+                    <h3 class="footer-title">Контакты</h3>
+                    <a href="tel:+78007894567" class="footer-link">8 (800) 789-45-67</a>
+                    <a href="mailto:volzhskie-prostory@mail.ru" class="footer-link">volzhskie-prostory@mail.ru</a>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html" class="footer-link">Главная</a></li>
+                        <li><a href="index-dark.html" class="footer-link">Главная (темная)</a></li>
+                        <li><a href="registration.html" class="footer-link">Регистрация</a></li>
+                        <li><a href="tour.html" class="footer-link">Экскурсия</a></li>
+                        <li><a href="account.html" class="footer-link">Личный кабинет</a></li>
+                        <li><a href="404.html" class="footer-link">Страница не найдена</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-info">
+                    <div class="logo">
+                        <img src="media/img/logo.svg" alt="Волжские просторы" width="150" height="45">
+                    </div>
+                    <p class="footer-copyright">© 2024 Турагентство «Волжские просторы»</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/script_registration.js"></script>
+</body>
+</html>
