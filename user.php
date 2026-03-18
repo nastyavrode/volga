@@ -64,9 +64,9 @@ class User {
 
         // ЗАПРОС К БД: Вставляем нового пользователя в таблицу
         $query = "INSERT INTO " . $this->table_name . " 
-        (email, last_name, first_name, age, gender, password, photo, registration_date)
+        (email, last_name, first_name, age, gender, password, photo)
         VALUES
-        (:email, :last_name, :first_name, :age, :gender, :password, :photo, NOW())";
+        (:email, :last_name, :first_name, :age, :gender, :password, :photo)";
 
         // Подготавливаем запрос
         $stmt = $this->conn->prepare($query);
